@@ -21,15 +21,24 @@ function playchaching() {
 function pausechaching() {
   chaching.pause();
 }
+
 // Global variable  score...
-var score = 0;
+var teamAscore = 0;
+var teamBscore = 0;
+var teamCscore = 0;
+
+var teamA = "Team A";
+var teamB = "Team B";
+var teamC = "Team C";
+
 //
 $(function () {
   // Hide the Modal after submit
-  $("#closesubmit").click(function () {
+  $("#correctSubmit").click(function () {
     $("#myModal").modal("hide");
   });
 });
+
 $(function () {
   // Remove Element after click
   $(".gridbtn").click(function () {
@@ -38,40 +47,67 @@ $(function () {
   });
 });
 
-$("#closesubmit").on("click", function () {
-  submit();
+$("#wrongSubmit").on("click", function () {
+  wrongSubmit();
 });
 
-// Submit Question Answer
-function submit(a, b) {
-  var selected = $(".modal-body input:checked").val();
-  // Determine if correct answer was chosen and alert prize
-  if (selected === questions[window.currentQuestion].correctAnswer) {
-    // console.log(selected + " was selected");
-    chaching.play();
-    window.addprize = questions[window.currentQuestion].cashPrize;
-    score = score + window.addprize;
-    $('#score1').html("  $" + score);
-    if (!Math.sign(score)) {
-      $('#score1').addClass("negative");
-    } else {
-      $('#score1').removeClass("negative");
-    }
-  }
-  // Determine if incorrect answer was chosen and alert prize
-  if (selected !== questions[window.currentQuestion].correctAnswer) {
-    buzzer.play();
-    window.subprize = questions[window.currentQuestion].cashPrize;
-    score = score - window.subprize;
-    console.log(score);
-    $('#score1').html("  $" + score);
-    if (Math.sign(score)) {
-      $('#score1').addClass("negative");
-    } else {
-      $('#score1').removeClass("negative");
-    }
+$("#correctSubmit").on("click", function () {
+  correctSubmit();
+});
+
+function updateScore(team, score)
+{  
+  var id = '#' + team.replace(/\s/g, '') +'score'
+  $(id).html("  $" + score);
+  if (!Math.sign(score)) {
+    $(id).addClass("negative");
+  } else {
+    $(id).removeClass("negative");
   }
 }
+
+function correctSubmit(a, b) {
+  var selected = $(".modal-body input:checked").val();
+  console.log(selected + " was selected");
+  chaching.play();
+  var prize = questions[window.currentQuestion].cashPrize;
+  if (selected === teamA) {
+    teamAscore = teamAscore + prize;
+    updateScore(teamA, teamAscore)
+  }
+
+  if (selected === teamB) {
+    teamBscore = teamBscore + prize;
+    updateScore(teamB, teamBscore)
+  }
+
+  if (selected === teamC) {
+    teamCscore = teamCscore + prize;
+    updateScore(teamC, teamCscore)
+  }
+}
+
+function wrongSubmit(a, b) {
+  var selected = $(".modal-body input:checked").val();
+  console.log(selected + " was selected");
+  chaching.play();
+  var prize = questions[window.currentQuestion].cashPrize;
+  if (selected === teamA) {
+    teamAscore = teamAscore - prize;
+    updateScore(teamA, teamAscore)
+  }
+
+  if (selected === teamB) {
+    teamBscore = teamBscore - prize;
+    updateScore(teamB, teamBscore)
+  }
+
+  if (selected === teamC) {
+    teamCscore = teamCscore - prize;
+    updateScore(teamC, teamCscore)
+  }
+}
+
 // Get question info from array, prepare
 function getOptions(question) {
   var $buttonDiv = $('<div id="disabled" class="btn-group" data-toggle="buttons"></div>');
@@ -86,6 +122,7 @@ function getOptions(question) {
   });
   return $buttonDiv;
 }
+
 // Populate modal window with specific question
 function showQuestion(event, $modal) {
   var button = $(event.relatedTarget); // Button that triggered the modal
@@ -95,6 +132,7 @@ function showQuestion(event, $modal) {
   $modal.find('.modal-title').text(question.prompt);
   $modal.find('.modal-body').empty().append(getOptions(question));
 }
+
 // Modal show/close functions
 $(function () {
   $("#myModal").on('show.bs.modal', function (event) {

@@ -27,9 +27,10 @@
 }
 
 .gridbtn {
-  width: 100%;
+  width: 90%;
   height: 90px;
   background-color: darkblue;
+  font-size: 40px;
 }
 
 .gridstyling {
@@ -43,6 +44,7 @@
 .question,
 .scoretally {
   font-family: Korinna BT;
+  font-size: 30px;
 }
 
 .container-fluid {
