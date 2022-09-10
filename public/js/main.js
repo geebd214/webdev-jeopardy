@@ -1,4 +1,4 @@
-import questions from './questions.js';
+// import questions from './questions.js';
 
 // Buzzer & Chaching sounds
 var buzzer = document.getElementById("buzzer");
