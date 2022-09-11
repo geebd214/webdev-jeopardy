@@ -5,7 +5,7 @@ const questions = [
     prompt: 'What is the expansion of HTML?',
     media: '',
     options: [teamA, teamB, teamC],    
-    cashPrize: 100
+    cashPrize: 100,    
   },
   {
     category: category[0],
@@ -141,7 +141,7 @@ const questions = [
     options: [teamA, teamB, teamC],  
     cashPrize: 1000
   },
-  /* Category 3 Questions */
+  /* 626 Questions */
   {
     category: category[2],
     prompt: 'What is the expansion of HTML?',
@@ -210,9 +210,10 @@ const questions = [
     prompt: 'Browsers do not usually allow cross-site actions but there is one major exception:',
     media: '',
     options: [teamA, teamB, teamC],  
-    cashPrize: 1000
+    cashPrize: 2000,
+    dailyDouble: 'true'
   },
-  /* Category 4 Questions */
+  /* SCREENS Questions */
   {
     category: category[3],
     prompt: 'What is the expansion of HTML?',
@@ -239,7 +240,7 @@ const questions = [
     prompt: 'What new element type introduced in HTML5 is functionally the same as a Div?',
     media: 'media/video/SCREENS_400.mp4',
     options: [teamA, teamB, teamC],  
-    cashPrize: 400
+    cashPrize: 400,
   },
   {
     category: category[3],
@@ -283,7 +284,7 @@ const questions = [
     options: [teamA, teamB, teamC],  
     cashPrize: 1000
   },
-  /* Category 5 Questions */
+  /* TAG Questions */
   {
     category: category[4],
     prompt: 'What is the expansion of HTML?',

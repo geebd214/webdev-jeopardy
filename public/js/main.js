@@ -22,6 +22,10 @@ function pausechaching() {
   chaching.pause();
 }
 
+function playdailydouble() {
+  dailydouble.play();
+}
+
 // Global variable  score...
 var teamAscore = 0;
 var teamBscore = 0;
@@ -161,11 +165,18 @@ function showQuestion(event, $modal) {
   var button = $(event.relatedTarget); // Button that triggered the modal
   var num = parseInt(button.data('num'));
   var question = questions[num];
+  var prize = question.cashPrize;
   window.currentQuestion = num;
-  $modal.find('.modal-title').text(question.category + "- $" + question.cashPrize);
+    
+  if (question.dailyDouble === "true") {
+    dailydouble.play();
+    $('#myModaldd').modal('show');
+  }
+
+  $modal.find('.modal-title').text(question.category + " - $" + question.cashPrize);
 
   //fill question and media
-  $modal.find('.modal-question').empty().append((getQuestion(question)));
+  $modal.find('.modal-question').empty().append(getQuestion(question));
 
   //fill team selects
   $modal.find('.modal-options').empty().append(getOptions(question));
@@ -177,9 +188,11 @@ $(function () {
     showQuestion(event, $(this));
   });
 });
+
 $("#myModal").on('hidden.bs.modal', function () {
   // console.log('The modal is now hidden.');
 });
+
 $('.modal-body input:checked').submit(function () {
   $('#myModal').modal('toggle');
   return false;
