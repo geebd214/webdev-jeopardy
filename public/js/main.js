@@ -31,6 +31,8 @@ var teamA = "Team A";
 var teamB = "Team B";
 var teamC = "Team C";
 
+var category = ["NAPSTER", "ICON", "626", "THE HILLS", "SCREENS", "TAG YOU'RE IT"]
+
 //
 $(function () {
   // Hide the Modal after submit
@@ -90,7 +92,7 @@ function correctSubmit(a, b) {
 function wrongSubmit(a, b) {
   var selected = $(".modal-body input:checked").val();
   console.log(selected + " was selected");
-  chaching.play();
+  buzzer.play();
   var prize = questions[window.currentQuestion].cashPrize;
   if (selected === teamA) {
     teamAscore = teamAscore - prize;
@@ -129,8 +131,9 @@ function showQuestion(event, $modal) {
   var num = parseInt(button.data('num'));
   var question = questions[num];
   window.currentQuestion = num;
-  $modal.find('.modal-title').text(question.prompt);
-  $modal.find('.modal-body').empty().append(getOptions(question));
+  $modal.find('.modal-title').text(question.category + "- $" + question.cashPrize );
+  $modal.find('.modal-question').text(question.prompt);
+  $modal.find('.modal-options').empty().append(getOptions(question));
 }
 
 // Modal show/close functions

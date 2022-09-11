@@ -24,10 +24,14 @@
 .panel-heading {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
+  grid-auto-flow: column;  
+  padding: 0px;
+  width: 100%;
+  grid-gap: 10px;
 }
 
 .gridbtn {
-  width: 90%;
+  width: 100%;
   height: 90px;
   background-color: darkblue;
   font-size: 40px;
@@ -44,7 +48,10 @@
 .question,
 .scoretally {
   font-family: Korinna BT;
-  font-size: 30px;
+}
+
+.modal-question {
+  font-size: 50px;
 }
 
 .container-fluid {

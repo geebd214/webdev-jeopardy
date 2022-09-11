@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Fab Forty Jeopardy</title>
-    <meta name="Jeopardy">    
+    <meta name="Jeopardy">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--   Bootstrap -->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
@@ -15,36 +15,18 @@
     <![endif]-->
 </head>
 
-<div>
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-            About / Music Control
-        </button>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav">
-            <!-- <li><a href=""></a></li>-->
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-            <!-- Background music -->
-            <audio controls autoplay>
-                <source src="sounds/Jeopardy-theme-song.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
-            <audio id="buzzer">
-                <source src="sounds/Wrong-answer-sound-effect.mp3" type="audio/mpeg">
-                Your browser does not support HTML5 video.
-            </audio>
-            <audio id="chaching">
-                <source src="sounds/Cash-register-sound.wav" type="audio/mpeg">
-                Your browser does not support HTML5 video.
-            </audio>
-        </ul>
-    </div>
-</div>
-</nav>
-
 <body>
+    <div class="row">
+        <div class="col-md-4" style="text-align: center;">
+            <h4>Team A:<span id="TeamAscore"> $0</span></h4>
+        </div>
+        <div class="col-md-4" style="text-align: center;">
+            <h4>Team B:<span id="TeamBscore"> $0</span></h4>
+        </div>
+        <div class="col-md-4" style="text-align: center;">
+            <h4>Team C:<span id="TeamCscore"> $0</span></h4>
+        </div>
+    </div>
 
     <div class="logo">
         <img src="css/images/Jeopardy.png" alt="Jeopardy Logo" id="topjlogo">
@@ -58,7 +40,7 @@
                 <div class="bs-example">
                     <!-- Modal HTML -->
                     <div id="myModal" class="modal fade">
-                        <div class="modal-dialog">
+                        <div class="modal-dialog modal-lg">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal"
@@ -66,6 +48,8 @@
                                     <h4 class="modal-title">Modal Window</h4>
                                 </div>
                                 <div class="modal-body">
+                                    <div class="modal-question"></div>
+                                    <div class="modal-options"></div>
                                 </div>
                                 <div class="modal-footer">
                                     <button id="wrongSubmit" type="button" class="btn btn-primary clickable"
@@ -84,20 +68,20 @@
             <div style="padding: 50px">
 
                 <div class="panel-heading">
-                    <div class="qcategory-title text-center">
-                        <h5>HTML</h5>
+                    <div class="qcategory-title" style="text-align: center;">
+                        <h1>NAPSTER</h1>
                     </div>
-                    <div class="qcategory-title text-center">
-                        <h5>CSS</h5>
+                    <div class="qcategory-title" style="text-align: center;">
+                        <h1>ICON</h1>
                     </div>
-                    <div class="qcategory-title text-center">
-                        <h5>JS</h5>
+                    <div class="qcategory-title" style="text-align: center;">
+                        <h1>626</h1>
                     </div>
-                    <div class="qcategory-title text-center">
-                        <h5>UNIX</h5>
+                    <div class="qcategory-title" style="text-align: center;">
+                        <h1>SCREENS</h1>
                     </div>
-                    <div class="qcategory-title text-center">
-                        <h5>BONUS</h5>
+                    <div class="qcategory-title" style="text-align: center;">
+                        <h1>TAG YOU'RE IT</h1>
                     </div>
                 </div>
 
@@ -132,27 +116,27 @@
                     </div>
                     <div class="question">
                         <button type="button" class="btn btn-info gridbtn six" data-toggle="modal"
-                            data-target="#myModal" data-num="0">$600
+                            data-target="#myModal" data-num="5">$600
                         </button>
                     </div>
                     <div class="question">
                         <button type="button" class="btn btn-info gridbtn seven" data-toggle="modal"
-                            data-target="#myModal" data-num="1">$700
+                            data-target="#myModal" data-num="6">$700
                         </button>
                     </div>
                     <div class="question">
                         <button type="button" class="btn btn-info gridbtn eight" data-toggle="modal"
-                            data-target="#myModal" data-num="2">$800
+                            data-target="#myModal" data-num="7">$800
                         </button>
                     </div>
                     <div class="question">
                         <button type="button" class="btn btn-info gridbtn nine" data-toggle="modal"
-                            data-target="#myModal" data-num="3">$900
+                            data-target="#myModal" data-num="8">$900
                         </button>
                     </div>
                     <div class="question">
                         <button type="button" class="btn btn-info gridbtn ten" data-toggle="modal"
-                            data-target="#myModal" data-num="4">$1000
+                            data-target="#myModal" data-num="9">$1000
                         </button>
                     </div>
 
@@ -372,13 +356,34 @@
 
             <!-- Footer & Dynamic scoreboard -->
             <div class="panel-footer">
-                <div class="scoretally pull-right">
-                    <h4>Team A Score:<span id="TeamAscore"> </span></h4>
-                    <h4>Team B Score:<span id="TeamBscore"> </span></h4>
-                    <h4>Team C Score:<span id="TeamCscore"> </span></h4>
+                <div>
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                            About / Music Control
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                        <ul class="nav navbar-nav">
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <!-- Background music -->
+                            <audio controls autoplay>
+                                <source src="sounds/Jeopardy-theme-song.mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                            <audio id="buzzer">
+                                <source src="sounds/Wrong-answer-sound-effect.mp3" type="audio/mpeg">
+                                Your browser does not support HTML5 video.
+                            </audio>
+                            <audio id="chaching">
+                                <source src="sounds/Cash-register-sound.wav" type="audio/mpeg">
+                                Your browser does not support HTML5 video.
+                            </audio>
+                        </ul>
+                    </div>
                 </div>
-                <div class="clearfix"></div>
             </div>
+
         </div>
     </div>
     <script src="js/jquery-3.1.0.js"></script>
