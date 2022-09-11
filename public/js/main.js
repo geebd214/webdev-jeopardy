@@ -37,6 +37,14 @@ var teamC = "Team C";
 
 var category = ["NAPSTER", "ICON", "626", "THE HILLS", "SCREENS", "TAG YOU'RE IT"]
 
+$(document).ready(function() {
+  $('#category0').text(category[0]);
+  $('#category1').text(category[1]);
+  $('#category2').text(category[2]);
+  $('#category3').text(category[3]);
+  $('#category4').text(category[4]);
+});
+
 //
 $(function () {
   // Hide the Modal after submit

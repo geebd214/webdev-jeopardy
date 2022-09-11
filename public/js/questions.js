@@ -1,3 +1,12 @@
+/*
+ - add "dailyDouble: 'true'" and cashPrize
+ - leave media empty if nothing to show
+ - media checks sub folder to determine type
+    - media/audio = <audio>
+    - media/video = <video>
+    - media/image = <img> (default)
+*/
+
 const questions = [
   /* Category 1 Questions */
   {
