@@ -57,9 +57,8 @@ $("#correctSubmit").on("click", function () {
   correctSubmit();
 });
 
-function updateScore(team, score)
-{  
-  var id = '#' + team.replace(/\s/g, '') +'score'
+function updateScore(team, score) {
+  var id = '#' + team.replace(/\s/g, '') + 'score'
   $(id).html("  $" + score);
   if (!Math.sign(score)) {
     $(id).addClass("negative");
@@ -125,14 +124,50 @@ function getOptions(question) {
   return $buttonDiv;
 }
 
+function getQuestion(question) {
+  var $questionDiv = $('<div></div>');
+  $questionDiv.text(question.prompt);
+
+  if (question.media != '') {
+    var $mediaDiv = $('<div></div>');
+    var $centerDiv = $('<center></center>');
+    
+    var source = question.media;    
+    if (source.search("audio") >=  0) {
+      var $audioDiv = $('<audio controls></audio>');
+      var $audioSource = $('<source src=' + question.media + ' type="audio/mpeg">');
+      $audioDiv.append($audioSource);
+      $centerDiv.append($audioDiv);
+    } else if (source.search("video") >=  0) {
+      var $videoDiv = $('<video width="640" height="480" controls></video>');
+      var $videoSource = $('<source src=' + question.media + ' type="video/mp4">');
+      $videoDiv.append($videoSource);
+      $centerDiv.append($videoDiv);
+    } else { // assume image
+      var $imgDiv = $('<img src=' + question.media + ' width="480">');            
+      $centerDiv.append($imgDiv);
+    }
+
+    $mediaDiv.append($centerDiv);
+    $questionDiv.append($mediaDiv);
+  }
+
+  console.log($questionDiv);
+  return $questionDiv
+}
+
 // Populate modal window with specific question
 function showQuestion(event, $modal) {
   var button = $(event.relatedTarget); // Button that triggered the modal
   var num = parseInt(button.data('num'));
   var question = questions[num];
   window.currentQuestion = num;
-  $modal.find('.modal-title').text(question.category + "- $" + question.cashPrize );
-  $modal.find('.modal-question').text(question.prompt);
+  $modal.find('.modal-title').text(question.category + "- $" + question.cashPrize);
+
+  //fill question and media
+  $modal.find('.modal-question').empty().append((getQuestion(question)));
+
+  //fill team selects
   $modal.find('.modal-options').empty().append(getOptions(question));
 }
 
