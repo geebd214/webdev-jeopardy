@@ -296,15 +296,15 @@ const questions = [
   /* TAG Questions */
   {
     category: category[4],
-    prompt: 'THIS DOG IS KNOWN FOR SAYING',
-    media: 'media/image/TAG_100.jpg',
+    prompt: 'WHAT IS THE TAGLINE FOR THIS COMMERCIAL CAMPAIGN?',
+    media: 'media/video/TAG_100.mp4',
     options: [teamA, teamB, teamC],    
     cashPrize: 100
   },
   {
     category: category[4],
-    prompt: 'THIS “WHO SHOT ALEXANDER HAMILTON” COMMERCIAL WAS FOR WHAT CAMPAIGN?',
-    media: 'media/image/TAG_200.png',
+    prompt: 'WHAT IS THE TAGLINE FOR THIS COMMERCIAL CAMPAIGN?',
+    media: 'media/video/TAG_200.mp4',
     options: [teamA, teamB, teamC],  
     cashPrize: 200
   },

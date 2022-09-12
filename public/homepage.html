@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<script src="js/jquery-3.1.0.js"></script>
+
+<script type="text/javascript">
+    function playboardfill() {
+        boardfill.play();
+    }
+</script>
+
 <head>
     <style>
         html,
@@ -22,13 +30,18 @@
 
 <body>
     <div class="imgbox">
-        <a href="index.html"><img class="center-fit" src="css/images/Jeopardy_MainPage.png"></a>
+        <a href="index.html" onclick="playboardfill()" target="_blank"><img class="center-fit"
+                src="css/images/Jeopardy_MainPage.png"></a>
     </div>
 </body>
 
 <audio controls autoplay>
     <source src="sounds/Jeopardy-theme-song.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
+</audio>
+<audio id="boardfill">
+    <source src="sounds/jeopardy-board-sms.mp3" type="audio/mpeg">
+    Your browser does not support HTML5 video.
 </audio>
 
 </html>
