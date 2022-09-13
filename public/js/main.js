@@ -91,11 +91,11 @@ $("#correctSubmitC").on("click", function () {
 function updateScore(team, score) {
   var id = '#' + team.replace(/\s/g, '') + 'score'
   $(id).html("  $" + score);
-  if (!Math.sign(score)) {
-    $(id).addClass("negative");
-  } else {
-    $(id).removeClass("negative");
-  }
+  // if (!Math.sign(score)) {
+  //   $(id).addClass("negative");
+  // } else {
+  //   $(id).removeClass("negative");
+  // }
 }
 
 function correctSubmit(team) {

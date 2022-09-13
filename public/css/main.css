@@ -39,9 +39,18 @@
   color:  #FFF17B;
 }
 
+.gridbtn.blank {
+  width: 100%;
+  height: 90px;    
+  background-color: white;
+  color: white;
+  font-size: 40px;
+  border: 0;
+}
+
 .gridstyling {
   display: grid;
-  grid-template-rows: [one] 1fr [two] 1fr [three] 1fr [four] 1fr [five] 1fr [six] 1fr [seven] 1fr [eight] 1fr [nine] 1fr [ten] 1fr;
+  grid-template-rows: [one] 1fr [two] 1fr [three] 1fr [four] 1fr [five] 1fr [six] 1fr [seven] 1fr [eight] 1fr [nine] 1fr [ten] 1fr [blank] 1fr;
   grid-auto-flow: column;
   grid-gap: 10px;
 }
