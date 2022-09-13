@@ -219,7 +219,7 @@ const questions = [
     prompt: 'WHAT IS THE BOY / GIRL RATIO OF 2ND GEN FAB?',
     media: '',
     options: [teamA, teamB, teamC],  
-    cashPrize: 1000,
+    cashPrize: 2000,
     dailyDouble: 'true'
   },
   /* SCREENS Questions */

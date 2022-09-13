@@ -4,7 +4,7 @@
 
 #topjlogo {
   width: 100%;
-  max-width: 600px;
+  /* max-width: 1000px; */
 }
 
 @font-face {
@@ -32,9 +32,11 @@
 
 .gridbtn {
   width: 100%;
-  height: 90px;
-  background-color: darkblue;
+  height: 90px;  
+  background-color: #23CCFC;
   font-size: 40px;
+  border: 0;  
+  color:  #FFF17B;
 }
 
 .gridstyling {
@@ -47,11 +49,16 @@
 .qcategory-title,
 .question,
 .scoretally {
-  font-family: Korinna BT;
+  font-family: Korinna BT;  
+}
+
+.modal-title {
+  font-size: 30px;
+  font-weight: bold;
 }
 
 .modal-question {
-  font-size: 50px;
+  font-size: 40px;
 }
 
 .container-fluid {
@@ -64,9 +71,13 @@
   align-items: center;
 }
 
-#score1 {
-  color: green;
-  font-size: 30px;
+#score {  
+  text-align: center; 
+  background-color: #fd3f98;
+}
+
+#teamname {
+  font-weight: bold;
 }
 
 .navbar-header {
@@ -76,6 +87,16 @@
 .button {
   height: 100%;
   width: 100%;
+}
+
+.btn-correct {
+  background-color: #06FF00;
+  color: black;
+}
+
+.btn-wrong {
+  background-color: #FF4848;
+  color: black;
 }
 
 .btn-outline-secondary {
@@ -117,10 +138,6 @@
 
 h4 {
   font-size: 35px;
-}
-
-h1 {
-  color: red;
 }
 
 p {

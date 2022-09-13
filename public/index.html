@@ -17,19 +17,19 @@
 
 <body>
     <div class="row">
-        <div class="col-md-4" style="text-align: center;">
-            <h4>Team A:<span id="TeamAscore"> $0</span></h4>
+        <div class="col-md-4" style="text-align: center; background-color: #fd3f98;" id="score">
+            <h2 id="teamname">Team A&sup2+B&sup2=C&sup2:<span id="TeamAscore"> $0</span></h2>
         </div>
-        <div class="col-md-4" style="text-align: center;">
-            <h4>Team B:<span id="TeamBscore"> $0</span></h4>
+        <div class="col-md-4" style="text-align: center; background-color: #fd3f98;" id="score">
+            <h2 id="teamname">TeAm WiLdCatS:<span id="TeamBscore"> $0</span></h2>
         </div>
-        <div class="col-md-4" style="text-align: center;">
-            <h4>Team C:<span id="TeamCscore"> $0</span></h4>
+        <div class="col-md-4" style="text-align: center; background-color: #fd3f98;" id="score">
+            <h2 id="teamname">Team TLC:<span id="TeamCscore"> $0</span></h2>
         </div>
     </div>
 
     <div class="logo">
-        <img src="css/images/Jeopardy.png" alt="Jeopardy Logo" id="topjlogo">
+        <img src="css/images/Jeopardy_GameHeader.png" alt="Jeopardy Logo" id="topjlogo">
     </div>
 
     <div>
@@ -42,34 +42,55 @@
                     <div id="myModal" class="modal fade">
                         <div class="modal-dialog modal-lg">
                             <div class="modal-content">
-                                <div class="modal-header">
+                                <div class="modal-header" style="background-color: #fd3f98;">
                                     <button type="button" class="close" data-dismiss="modal"
                                         aria-hidden="true">×</button>
-                                    <h4 class="modal-title">Modal Window</h4>
+                                    <center>
+                                        <div class="modal-title">Modal Window</div>
+                                    </center>
                                 </div>
                                 <div class="modal-body">
                                     <div class="modal-question"></div>
-                                    <div class="modal-options"></div>
+                                    <!-- <div class="modal-options"></div> -->
                                 </div>
                                 <div class="modal-footer">
-                                    <button id="wrongSubmit" type="button" class="btn btn-danger clickable"
-                                        onclick="">Wrong
-                                    </button>
-                                    <button id="correctSubmit" type="button" class="btn btn-success clickable"
-                                        onclick="">Correct
-                                    </button>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <button id="wrongSubmitA" type="button" class="btn btn-wrong clickable"
+                                                onclick="">Team A
+                                            </button>
+                                            <button id="wrongSubmitB" type="button" class="btn btn-wrong clickable"
+                                                onclick="">Team B
+                                            </button>
+                                            <button id="wrongSubmitC" type="button" class="btn btn-wrong clickable"
+                                                onclick="">Team C
+                                            </button>
+                                        </div>
+                                        <div class="col-md-4"></div>
+                                        <div class="col-md-4" style="padding-right: 30px">
+                                            <button id="correctSubmitA" type="button" class="btn btn-correct clickable"
+                                                onclick="">Team A
+                                            </button>
+                                            <button id="correctSubmitB" type="button" class="btn btn-correct clickable"
+                                                onclick="">Team B
+                                            </button>
+                                            <button id="correctSubmitC" type="button" class="btn btn-correct clickable"
+                                                onclick="">Team C
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div id="myModaldd" class="modal fade">
                         <div class="modal-dialog modal-lg">
-                            <div class="modal-content">                                
-                                <div class="modal-body">    
+                            <div class="modal-content">
+                                <div class="modal-body">
                                     <center>
-                                        <img src="media/image/daily_double.png" height="480">                          
+                                        <img src="media/image/daily_double.png" height="480">
                                     </center>
-                                </div>                                
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -80,19 +101,19 @@
 
                 <div class="panel-heading">
                     <div class="qcategory-title" style="text-align: center;">
-                        <h1 id="category0"></h1>
+                        <h1 id="category0" style="color: #fd3f98;"></h1>
                     </div>
                     <div class="qcategory-title" style="text-align: center;">
-                        <h1 id="category1"></h1>
+                        <h1 id="category1" style="color: #fd3f98;"></h1>
                     </div>
                     <div class="qcategory-title" style="text-align: center;">
-                        <h1 id="category2"></h1>
+                        <h1 id="category2" style="color: #fd3f98;"></h1>
                     </div>
                     <div class="qcategory-title" style="text-align: center;">
-                        <h1 id="category3"></h1>
+                        <h1 id="category3" style="color: #fd3f98;"></h1>
                     </div>
                     <div class="qcategory-title" style="text-align: center;">
-                        <h1 id="category4"></h1>
+                        <h1 id="category4" style="color: #fd3f98;"></h1>
                     </div>
                 </div>
 
@@ -376,7 +397,8 @@
                     <div class="collapse navbar-collapse" id="myNavbar">
                         <ul class="nav navbar-nav">
                         </ul>
-                        <ul class="nav navbar-nav navbar-right"><datagrid></datagrid>
+                        <ul class="nav navbar-nav navbar-right">
+                            <datagrid></datagrid>
                             <!-- Background music -->
                             <audio controls autoplay loop>
                                 <source src="sounds/Jeopardy-theme-song.mp3" type="audio/mpeg">

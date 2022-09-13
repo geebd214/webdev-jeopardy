@@ -31,9 +31,9 @@ var teamAscore = 0;
 var teamBscore = 0;
 var teamCscore = 0;
 
-var teamA = "Team A";
-var teamB = "Team B";
-var teamC = "Team C";
+var teamA = 'Team A';
+var teamB = 'Team B';
+var teamC = 'Team C';
 
 var category = ["NAPSTER", "ICON", "626", "THE HILLS", "SCREENS", "TAG YOU'RE IT"]
 
@@ -46,12 +46,12 @@ $(document).ready(function() {
 });
 
 //
-$(function () {
-  // Hide the Modal after submit
-  $("#correctSubmit").click(function () {
-    $("#myModal").modal("hide");
-  });
-});
+// $(function () {
+//   // Hide the Modal after submit
+//   $("#correctSubmit").click(function () {
+//     $("#myModal").modal("hide");
+//   });
+// });
 
 $(function () {
   // Remove Element after click
@@ -61,12 +61,31 @@ $(function () {
   });
 });
 
-$("#wrongSubmit").on("click", function () {
-  wrongSubmit();
+$("#wrongSubmitA").on("click", function () {
+  wrongSubmit(teamA);
 });
 
-$("#correctSubmit").on("click", function () {
-  correctSubmit();
+$("#wrongSubmitB").on("click", function () {
+  wrongSubmit(teamB);
+});
+
+$("#wrongSubmitC").on("click", function () {
+  wrongSubmit(teamC);
+});
+
+$("#correctSubmitA").on("click", function () {
+  correctSubmit(teamA);
+  $("#myModal").modal("hide");
+});
+
+$("#correctSubmitB").on("click", function () {
+  correctSubmit(teamB);
+  $("#myModal").modal("hide");
+});
+
+$("#correctSubmitC").on("click", function () {
+  correctSubmit(teamC);
+  $("#myModal").modal("hide");
 });
 
 function updateScore(team, score) {
@@ -79,62 +98,62 @@ function updateScore(team, score) {
   }
 }
 
-function correctSubmit(a, b) {
-  var selected = $(".modal-body input:checked").val();
-  console.log(selected + " was selected");
+function correctSubmit(team) {
+  // var selected = $(".modal-body input:checked").val();
+  // console.log(selected + " was selected");
   chaching.play();
   var prize = questions[window.currentQuestion].cashPrize;
-  if (selected === teamA) {
+  if (team === teamA) {
     teamAscore = teamAscore + prize;
     updateScore(teamA, teamAscore)
   }
 
-  if (selected === teamB) {
+  if (team === teamB) {
     teamBscore = teamBscore + prize;
     updateScore(teamB, teamBscore)
   }
 
-  if (selected === teamC) {
+  if (team === teamC) {
     teamCscore = teamCscore + prize;
     updateScore(teamC, teamCscore)
   }
 }
 
-function wrongSubmit(a, b) {
-  var selected = $(".modal-body input:checked").val();
-  console.log(selected + " was selected");
+function wrongSubmit(team) {
+  // var selected = $(".modal-body input:checked").val();
+  // console.log(selected + " was selected");
   buzzer.play();
   var prize = questions[window.currentQuestion].cashPrize;
-  if (selected === teamA) {
+  if (team === teamA) {
     teamAscore = teamAscore - prize;
     updateScore(teamA, teamAscore)
   }
 
-  if (selected === teamB) {
+  if (team === teamB) {
     teamBscore = teamBscore - prize;
     updateScore(teamB, teamBscore)
   }
 
-  if (selected === teamC) {
+  if (team === teamC) {
     teamCscore = teamCscore - prize;
     updateScore(teamC, teamCscore)
   }
 }
 
-// Get question info from array, prepare
-function getOptions(question) {
-  var $buttonDiv = $('<div id="disabled" class="btn-group" data-toggle="buttons"></div>');
-  question.options.forEach(function (opt) {
-    var $div = $('<div class="radio">');
-    var $label = $('<label class="radio-inline"></label');
-    var $input = $('<input type="radio" name="opts" value="' + opt + '">');
-    $label.append($input);
-    $label.append(opt);
-    $div.append($label);
-    $buttonDiv.append($div);
-  });
-  return $buttonDiv;
-}
+// // Get question info from array, prepare
+// function getOptions(question) {
+//   var $buttonDiv = $('<div id="disabled" class="btn-group" data-toggle="buttons"></div>');
+//   question.options.forEach(function (opt) {
+//     var $div = $('<div class="radio">');
+//     var $label = $('<label class="radio-inline"></label');
+//     var $input = $('<input type="radio" name="opts" value="' + opt + '">');
+//     $label.append($input);
+//     $label.append(opt);
+//     $div.append($label);
+//     $buttonDiv.append($div);
+//   });
+//   return $buttonDiv;
+// }
 
 function getQuestion(question) {
   var $questionDiv = $('<div></div>');
@@ -151,12 +170,17 @@ function getQuestion(question) {
       $audioDiv.append($audioSource);
       $centerDiv.append($audioDiv);
     } else if (source.search("video") >=  0) {
-      var $videoDiv = $('<video width="640" height="480" controls></video>');
+      var $videoDiv = $('<video width="640" height="480" controls preload="none"></video>');
       var $videoSource = $('<source src=' + question.media + ' type="video/mp4">');
       $videoDiv.append($videoSource);
       $centerDiv.append($videoDiv);
     } else { // assume image
-      var $imgDiv = $('<img src=' + question.media + ' width="480">');            
+      if (question.category === category[0]) {
+        var $imgDiv = $('<img src=' + question.media + ' width="100%">');            
+      } else {
+        var $imgDiv = $('<img src=' + question.media + ' width="480">');
+      }
+      
       $centerDiv.append($imgDiv);
     }
 
@@ -187,7 +211,7 @@ function showQuestion(event, $modal) {
   $modal.find('.modal-question').empty().append(getQuestion(question));
 
   //fill team selects
-  $modal.find('.modal-options').empty().append(getOptions(question));
+  // $modal.find('.modal-options').empty().append(getOptions(question));
 }
 
 // Modal show/close functions
