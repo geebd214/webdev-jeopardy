@@ -35,7 +35,7 @@ var teamA = 'Team A';
 var teamB = 'Team B';
 var teamC = 'Team C';
 
-var category = ["NAPSTER", "ICON", "626", "THE HILLS", "SCREENS", "TAG YOU'RE IT"]
+var category = ["NAPSTER", "ICON", "626", "SCREENS", "TAG YOU'RE IT"]
 
 $(document).ready(function() {  
   $('#category0').text(category[0]);
@@ -56,8 +56,9 @@ $(document).ready(function() {
 $(function () {
   // Remove Element after click
   $(".gridbtn").click(function () {
-    $(this).addClass("disabled");
-    $(this).remove();
+    //$(this).addClass("disabled");
+    $(this).addClass("blank")
+    //$(this).remove();
   });
 });
 

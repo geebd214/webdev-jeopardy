@@ -267,7 +267,7 @@ const questions = [
   },
   {
     category: category[3],
-    prompt: 'SING THE SAVED BY THE BELL THEME SONG',
+    prompt: 'SING ALONG TO THE SAVED BY THE BELL THEME SONG',
     media: 'media/audio/SCREENS_700.mp3',
     options: [teamA, teamB, teamC],  
     cashPrize: 700
