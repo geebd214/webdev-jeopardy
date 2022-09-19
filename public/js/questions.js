@@ -364,6 +364,14 @@ const questions = [
     options: [teamA, teamB, teamC],  
     cashPrize: 1000
   },
+  {
+    category: 'Final Jeopardy',
+    prompt:  'List the next generation in order of youngest to oldest',
+    media: 'media/audio/Final_Jeopardy.mp3',
+    options: [teamA, teamB, teamC],  
+    cashPrize: 0,
+    finalJeopardy: 'true'    
+  }
 ];
 
 // export default questions;

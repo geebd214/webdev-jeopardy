@@ -166,7 +166,13 @@ function getQuestion(question) {
     
     var source = question.media;    
     if (source.search("audio") >=  0) {
-      var $audioDiv = $('<audio controls></audio>');
+      if (question.finalJeopardy === 'true') {
+        var $audioDiv = $('<audio controls loop></audio>');
+      }
+      else {
+        var $audioDiv = $('<audio controls></audio>');
+      }
+      
       var $audioSource = $('<source src=' + question.media + ' type="audio/mpeg">');
       $audioDiv.append($audioSource);
       $centerDiv.append($audioDiv);
@@ -206,7 +212,13 @@ function showQuestion(event, $modal) {
     $('#myModaldd').modal('show');
   }
 
-  $modal.find('.modal-title').text(question.category + " - $" + question.cashPrize);
+  if (question.finalJeopardy === "true") {    
+    $('#myModalfj').modal('show');    
+    $modal.find('.modal-title').text(question.category);
+  }
+  else {
+    $modal.find('.modal-title').text(question.category + " - $" + question.cashPrize);
+  }
 
   //fill question and media
   $modal.find('.modal-question').empty().append(getQuestion(question));
