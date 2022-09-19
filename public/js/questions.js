@@ -366,7 +366,7 @@ const questions = [
   },
   {
     category: 'Final Jeopardy',
-    prompt:  'List the next generation in order of youngest to oldest',
+    prompt:  'List the Fab 2nd generation in order of oldest to youngest',
     media: 'media/audio/Final_Jeopardy.mp3',
     options: [teamA, teamB, teamC],  
     cashPrize: 0,
