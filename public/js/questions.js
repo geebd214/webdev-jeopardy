@@ -217,7 +217,7 @@ const questions = [
   {
     category: category[2],
     prompt: 'WHAT IS THE BOY / GIRL RATIO OF 2ND GEN FAB?',
-    media: '',
+    media: 'media/video/626_1000.MOV',
     options: [teamA, teamB, teamC],  
     cashPrize: 2000,
     dailyDouble: 'true'
