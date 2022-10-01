@@ -26,6 +26,10 @@ function playdailydouble() {
   dailydouble.play();
 }
 
+function playtimesup() {
+  timesup.play();
+}
+
 // Global variable  score...
 var teamAscore = 0;
 var teamBscore = 0;

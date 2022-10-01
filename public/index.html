@@ -448,6 +448,10 @@
                                 <source src="sounds/jeopardy-daily-double-sound-effect.mp3" type="audio/mpeg">
                                 Your browser does not support HTML5 video.
                             </audio>
+                            <audio id="timesup">
+                                <source src="sounds/times-up.mp3" type="audio/mpeg">
+                                Your browser does not support HTML5 video.
+                            </audio>
                         </ul>
                     </div>
                 </div>
@@ -459,6 +463,15 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/questions.js"></script>
+    <script>
+        $(document).keypress(function(e){
+            var checkWebkitandIE=(e.which==116 ? 1 : 0);
+            var checkMoz=(e.which==116 ? 1 : 0);
+            setTimeout(() => {
+                playtimesup();
+                }, 5000)            
+        });
+    </script>
 
 </body>
 
