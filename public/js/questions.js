@@ -11,70 +11,70 @@ const questions = [
   /* NAPSTER Questions */
   {
     category: category[0],
-    prompt: 'NAME THIS SONG',
-    media: 'media/image/NAPSTER_100.png',
+    prompt: 'FINISH THE LYRICS (SING)',
+    media: 'media/audio/Napster_100.mp3',
     options: [teamA, teamB, teamC],    
     cashPrize: 100
   },
   {
     category: category[0],
-    prompt: 'FINISH THE LYRICS',
-    media: 'media/audio/Napster_200.mp3',
+    prompt: 'FINISH THE LYRICS (SING)',
+    media: 'media/audio/NAPSTER_200.mp3',
     options: [teamA, teamB, teamC],  
     cashPrize: 200
   },
   {
     category: category[0],
-    prompt: 'NAME THIS SONG',
-    media: 'media/image/NAPSTER_300.png',
+    prompt: 'FINISH THE LYRICS (SING)',
+    media: 'media/audio/Napster_300.mp3',
     options: [teamA, teamB, teamC],  
     cashPrize: 300
   },
   {
     category: category[0],
-    prompt: 'FINISH THE LYRICS',
+    prompt: 'FINISH THE LYRICS (SING)',
     media: 'media/audio/Napster_400.mp3',
     options: [teamA, teamB, teamC],  
     cashPrize: 400
   },
   {
     category: category[0],
-    prompt: 'NAME THIS SONG',
-    media: 'media/image/NAPSTER_500.png',
+    prompt: 'FINISH THE LYRICS (SING)',
+    media: 'media/audio/NAPSTER_500.mp3',
     options: [teamA, teamB, teamC],  
     cashPrize: 500
   },
   {
     category: category[0],
-    prompt: 'FINISH THE LYRICS',
+    prompt: 'FINISH THE LYRICS (SING)',
     media: 'media/audio/Napster_600.mp3',
     options: [teamA, teamB, teamC],  
     cashPrize: 600
   },
   {
     category: category[0],
-    prompt: 'NAME THIS SONG',
-    media: 'media/image/NAPSTER_700.png',
+    prompt: 'FINISH THE LYRICS (SING)',
+    media: 'media/audio/NAPSTER_700.mp3',
     options: [teamA, teamB, teamC],  
     cashPrize: 700
   },
   {
     category: category[0],
-    prompt: 'FINISH THE LYRICS',
+    prompt: 'FINISH THE LYRICS (SING)',
     media: 'media/audio/Napster_800.mp3',
     options: [teamA, teamB, teamC],  
     cashPrize: 800
   },
   {
     category: category[0],
-    prompt: 'NAME THIS SONG',
-    media: 'media/image/NAPSTER_900.png',
+    prompt: 'FINISH THE LYRICS (SING)',
+    media: 'media/audio/NAPSTER_900.mp3',
     options: [teamA, teamB, teamC],  
     cashPrize: 900
   },
   {
     category: category[0],
-    prompt: 'FINISH THE LYRICS',
+    prompt: 'FINISH THE LYRICS (SING)',
     media: 'media/audio/Napster_1000.mp3',
     options: [teamA, teamB, teamC],  
     cashPrize: 1000
@@ -89,8 +89,8 @@ const questions = [
   },
   {
     category: category[1],
-    prompt: 'NAME THE COMPANY AND FAMOUS ‘90s PRODUCT',
-    media: 'media/image/ICON_200.jpg',
+    prompt: 'NAME THE COMPANY',
+    media: 'media/image/ICON_200.png',
     options: [teamA, teamB, teamC],  
     cashPrize: 200
   },
@@ -131,14 +131,14 @@ const questions = [
   },
   {
     category: category[1],
-    prompt: 'THIS IS AN AD FOR WHICH BRAND',
+    prompt: 'NAME THIS PRODUCT',
     media: 'media/image/ICON_800.jpg',
     options: [teamA, teamB, teamC],  
     cashPrize: 800
   },
   {
     category: category[1],
-    prompt: 'NAME THIS AD PERFORMANCE',
+    prompt: 'NAME THE COMPANY AND ITS FAMOUS ‘90s TRADEMARKED PRODUCT',
     media: 'media/image/ICON_900.jpg',
     options: [teamA, teamB, teamC],  
     cashPrize: 900
@@ -167,8 +167,8 @@ const questions = [
   },
   {
     category: category[2],
-    prompt: 'WHAT WERE THE PREVIOUS NAME(S) OF “SPEEDZONE” IN PUENTE HILLS',
-    media: '',
+    prompt: 'WHO'S SENIOR YEAR QUOTE IS THE FOLLOWING:',
+    media: 'media/image/626_300.png',
     options: [teamA, teamB, teamC],  
     cashPrize: 300
   },
@@ -181,36 +181,36 @@ const questions = [
   },
   {
     category: category[2],
-    prompt: 'WHICH OF OUR CLASSMATES FAMOUSLY SAID “HIYA BIFF”?',
+    prompt: 'WHAT SELF-PROCLAIMED “PIANO PRODIGY” THAT “COULD’VE BEEN VALEDICTORIAN” ERASED AND CHANGED THEIR GRADES WITH A PENCIL?',
     media: '',
     options: [teamA, teamB, teamC],  
     cashPrize: 500
   },
   {
     category: category[2],
-    prompt: 'WHAT SELF-PROCLAIMED “PIANO PRODIGY” THAT “COULD’VE BEEN VALEDICTORIAN” ERASED AND CHANGED THEIR GRADES WITH A PENCIL',
+    prompt: 'WHAT CELEBRITY LOCKED JOCELYN IN WHS BATHROOM?',
     media: '',
     options: [teamA, teamB, teamC],  
     cashPrize: 600
   },
   {
     category: category[2],
-    prompt: 'WHO IN OUR GROUP HAD THE MOST SIGNIFICANT OTHERS (TO DATE)?',
+    prompt: 'WHICH OF OUR CLASSMATES FAMOUSLY SAID “HIYA BIFF”?',
     media: '',
     options: [teamA, teamB, teamC],  
     cashPrize: 700
   },
   {
     category: category[2],
-    prompt: 'WHAT CELEBRITY LOCKED JOCELYN IN WHS BATHROOM?',
-    media: '',
+    prompt: 'PLEASE DECODE ALL THE ACRONYMS IN THIS SENIOR YEAR QUOTE:',
+    media: 'media/image/626_800.png',
     options: [teamA, teamB, teamC],  
     cashPrize: 800
   },
   {
     category: category[2],
-    prompt: 'BEFORE AMC 20, WHAT WERE THE NAMES OF THE OTHER MOVIE THEATERS IN PUENTE HILLS?',
-    media: '',
+    prompt: 'WHO IN OUR GROUP HAD THE MOST SIGNIFICANT OTHERS (TO DATE)?',
+    media: 'media/video/626_900.MOV',
     options: [teamA, teamB, teamC],  
     cashPrize: 900
   },
@@ -225,22 +225,22 @@ const questions = [
   /* SCREENS Questions */
   {
     category: category[3],
-    prompt: 'HUM THE THEME SONG TO 90210',
-    media: 'media/audio/SCREENS_100.mp3',
+    prompt: 'WHAT IS FORREST GUMP’S MOST FAMOUS LINE?',
+    media: '',
     options: [teamA, teamB, teamC],    
     cashPrize: 100
   },
   {
     category: category[3],
-    prompt: 'WHAT IS FORREST GUMP’S MOST FAMOUS LINE?',
-    media: '',
+    prompt: 'HUM THE THEME SONG TO 90210',
+    media: 'media/audio/SCREENS_200.mp3',
     options: [teamA, teamB, teamC],  
     cashPrize: 200
   },
   {
     category: category[3],
-    prompt: 'NAME 4 DISNEY AFTERNOON SHOWS',
-    media: 'media/image/SCREENS_300.jpg',
+    prompt: 'NAME THIS DISNEY AFTERNOON CHARACTER',
+    media: 'media/image/SCREENS_300.png',
     options: [teamA, teamB, teamC],  
     cashPrize: 300
   },
