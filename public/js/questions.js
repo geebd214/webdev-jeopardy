@@ -167,7 +167,7 @@ const questions = [
   },
   {
     category: category[2],
-    prompt: 'WHO'S SENIOR YEAR QUOTE IS THE FOLLOWING:',
+    prompt: 'WHO’S SENIOR YEAR QUOTE IS THE FOLLOWING:',
     media: 'media/image/626_300.png',
     options: [teamA, teamB, teamC],  
     cashPrize: 300
